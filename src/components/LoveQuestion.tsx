@@ -3,7 +3,6 @@ import { FlowerCelebration } from "@/components/FlowerCelebration";
 import { Button } from "@/components/ui/button";
 import { RotateCcw, Volume2, VolumeX } from "lucide-react";
 import { MUSE_DELAY_MS, SWEETIE_DELAY_MS, THANK_YOU_DELAY_MS } from "@/lib/celebration";
-import musicAsset from "@/assets/musik.mp3.asset.json";
 
 type Stage = "tulips" | "thanks" | "final" | "muse";
 
@@ -116,7 +115,7 @@ export function LoveQuestion() {
             {muted ? "Muted" : "Music"}
           </Button>
         </div>
-        <audio ref={audioRef} src={musicAsset.url} loop preload="auto" />
+        <audio ref={audioRef} src="/media/musik.mp3" loop preload="auto" />
       </div>
     );
   }

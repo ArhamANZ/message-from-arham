@@ -2,24 +2,25 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { messageFor } from "@/lib/names";
 import { LoveQuestion } from "@/components/LoveQuestion";
-import photo00 from "@/assets/collage-photo-00.jpg.asset.json";
-import photo01 from "@/assets/collage-photo-01.jpg.asset.json";
-import photo02 from "@/assets/collage-photo-02.jpg.asset.json";
-import photo03 from "@/assets/collage-photo-03.jpg.asset.json";
-import photo04 from "@/assets/collage-photo-04.jpg.asset.json";
-import photo05 from "@/assets/collage-photo-05.jpg.asset.json";
-import photo06 from "@/assets/collage-photo-06.jpg.asset.json";
-import photo07 from "@/assets/collage-photo-07.jpg.asset.json";
-import photo11 from "@/assets/collage-photo-11.jpg.asset.json";
-import photo14 from "@/assets/collage-photo-14.jpg.asset.json";
-import photo15 from "@/assets/collage-photo-15.jpg.asset.json";
-import photo18 from "@/assets/collage-photo-18.jpg.asset.json";
-import photo20 from "@/assets/collage-photo-20.jpg.asset.json";
-import photo21 from "@/assets/collage-photo-21.jpg.asset.json";
-import photo23 from "@/assets/collage-photo-23.jpg.asset.json";
-import photo26 from "@/assets/collage-photo-26.jpg.asset.json";
 
-const collagePhotos = [photo02, photo06, photo04, photo14, photo21, photo26, photo01, photo03, photo07, photo23, photo18, photo05, photo20, photo15, photo00, photo11];
+const collagePhotos = [
+  "/media/collage-photo-02.jpg",
+  "/media/collage-photo-06.jpg",
+  "/media/collage-photo-04.jpg",
+  "/media/collage-photo-14.jpg",
+  "/media/collage-photo-21.jpg",
+  "/media/collage-photo-26.jpg",
+  "/media/collage-photo-01.jpg",
+  "/media/collage-photo-03.jpg",
+  "/media/collage-photo-07.jpg",
+  "/media/collage-photo-23.jpg",
+  "/media/collage-photo-18.jpg",
+  "/media/collage-photo-05.jpg",
+  "/media/collage-photo-20.jpg",
+  "/media/collage-photo-15.jpg",
+  "/media/collage-photo-00.jpg",
+  "/media/collage-photo-11.jpg",
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -74,8 +75,8 @@ function Index() {
   return (
     <main className="photo-entry flex min-h-screen items-center justify-center px-4 py-8">
       <div className="photo-collage" aria-hidden="true">
-        {collagePhotos.map((photo) => (
-          <img key={photo.asset_id} src={photo.url} alt="" />
+        {collagePhotos.map((photoUrl, index) => (
+          <img key={index} src={photoUrl} alt="" />
         ))}
       </div>
       <div className="card-pop relative z-10 w-full max-w-md rounded-3xl p-8 text-center">
